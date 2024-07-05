@@ -21,7 +21,7 @@ public:
 
 public:
   wptr() : data_(nullptr) {}
-  explicit wptr(const resource_type& resource) : data_{resource} {}
+  wptr(const resource_type& resource) : data_{resource} {}
   wptr(const wptr& other) : data_{other.data_} {}
   wptr(wptr&& other) noexcept : data_{std::move(other.data_)} {}
 

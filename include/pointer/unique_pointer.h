@@ -21,7 +21,7 @@ public:
 
 public:
   uptr() = default;
-  explicit uptr(pointer data) : data_{data} {}
+  uptr(const pointer data) : data_{data} {}
   uptr(const uptr& other) = delete;
   uptr(uptr&& other) noexcept : data_{other.data_} { other.data_ = nullptr; }
   ~uptr() { delete data_; }

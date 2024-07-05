@@ -24,7 +24,7 @@ public:
 public:
   sptr() = default;
 
-  explicit sptr(pointer data) : data_{data}, ref_count_{data ? new counter(1) : nullptr} {}
+  sptr(const pointer data) : data_{data}, ref_count_{data ? new counter(1) : nullptr} {}
 
   sptr(const sptr& other) : data_{other.data_}, ref_count_{other.ref_count_} {
     ref_count_->fetch_add(1, std::memory_order_relaxed);

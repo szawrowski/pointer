@@ -21,7 +21,7 @@ public:
 
 public:
   ptr() = default;
-  explicit ptr(pointer data) : data_{data} {}
+  ptr(const pointer data) : data_{data} {}
   ptr(const ptr& other) : data_{other.data_} {}
 
 public:
